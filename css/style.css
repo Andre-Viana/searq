@@ -37,6 +37,14 @@ main .hero {
   transform: translateX(-50%)
 }
 
+@media (max-width: 992px) {
+  #brand, #hero-text{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%)
+  }
+}
+
 @media (min-width: 800px) {
   main .hero {
     top: 5%;
