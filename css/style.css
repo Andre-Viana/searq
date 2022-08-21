@@ -7,7 +7,9 @@ html {
 }
 
 html body  {
-  font-family: 'Source Sans Pro';
+  font-family: 'Montserrat';
+  font-weight: normal;
+  font-style: normal;
 }
 
 canvas{
@@ -51,6 +53,12 @@ main .hero {
   }
 }
 
+@media (min-width: 992px) {
+  #head-agenda h1{
+    font-size: 4rem;
+  }
+}
+
 main .wrap{
   width: 100%;
   height: 100%;
@@ -64,10 +72,35 @@ main .wrap{
   z-index: 9999;
 }
 
+.featurette-img{
+  border-radius:25%;
+  overflow:hidden; 
+}
+
+.featurette-img img {
+  height: 500 px;
+}
+
 /* Customiza Bootstrap Font Classes */
+
+.h1, h1 {
+  font-size: 3rem;
+}
 
 .lead {
   font-size: 1.50rem;
+  font-weight: 400;
+}
+
+@media (max-width: 992px) {
+  .lead{
+    font-size: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.50rem;
+  }
+}
+
+.display-5 {
   font-weight: 400;
 }
 
