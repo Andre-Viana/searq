@@ -28,7 +28,7 @@
             <p class="lead">Discussões em torno dos documentos arquivísticos nato-digitais</p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
               <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Ingressos</button>
-              <button type="button" class="btn btn-outline-secondary btn-lg px-4" onclick="smoothScroll(document.getElementById('agenda'))">Agenda</button>
+              <a id="go-to-agenda" href="#agenda" class="btn btn-outline-secondary btn-lg px-4">Agenda</a>
             </div>
           </div>
         </div>
@@ -122,28 +122,26 @@
     <script>
       document.getElementById("year").innerHTML = new Date().getFullYear();
 
-      window.smoothScroll = function(target) {
-        var scrollContainer = target;
-        do { //find scroll container
-            scrollContainer = scrollContainer.parentNode;
-            if (!scrollContainer) return;
-            scrollContainer.scrollTop += 1;
-        } while (scrollContainer.scrollTop == 0);
+      const link = document.getElementById("go-to-agenda");
+      link.addEventListener("click", clickHandler);
 
-        var targetY = 0;
-        do { //find the top of target relatively to the container
-            if (target == scrollContainer) break;
-            targetY += target.offsetTop;
-        } while (target = target.offsetParent);
+      function clickHandler(e) {
+        e.preventDefault();
+        const href = this.getAttribute("href");
+        console.log(href);
+        const element = document.querySelector(href);
+        const offsetTop = getOffsetTop(element);
 
-        scroll = function(c, a, b, i) {
-            i++; if (i > 30) return;
-            c.scrollTop = a + (b - a) / 30 * i;
-            setTimeout(function(){ scroll(c, a, b, i); }, 20);
-        }
-        // start scrolling
-        scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-    }
+        scroll({
+          top: offsetTop,
+          behavior: "smooth"
+        });
+      }
+
+      function getOffsetTop(element) {
+        return element ? (element.offsetTop + getOffsetTop(element.offsetParent)) : 0;
+      }
+      
     </script>
   </body>
 </html>
