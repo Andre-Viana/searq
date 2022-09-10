@@ -2,6 +2,13 @@
   .rounded-lg-3 { border-radius: .3rem; }
 }
 
+:root {
+  /* #3a1e4b */
+  --purple: 58,30,75;
+  --purple-ii: 41,21,54;
+  --searq-yellow: 246,168,64;
+}
+
 html { 
   scroll-behavior: smooth; 
 }
@@ -27,6 +34,11 @@ canvas{
   background-repeat: no-repeat;
 }
 
+#support{
+  margin-top: 100px;
+  margin-bottom: 210px;
+}
+
 main {
   height: 100%;
   overflow: hidden;
@@ -38,6 +50,26 @@ main .hero {
   position: absolute;
   left: 50%;
   transform: translateX(-50%)
+}
+
+@media (min-width: 575px){
+
+  #support .row .col{
+    position: relative;
+    height: 216px;
+  }
+  
+  #support .row .col img{
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+}
+
+#footer .pb-0 .mb-4 a{
+  margin-top: 1.5rem !important;
 }
 
 @media (max-width: 992px) {
@@ -114,9 +146,19 @@ main .wrap{
   }
 }
 
-.display-5 {
+.display-5, .display-4, .display-3 {
   font-weight: 400;
 }
+
+.navbar{
+  --bs-navbar-color: #f6a840;
+  --bs-navbar-hover-color: #f1d21f;
+  --bs-navbar-disabled-color: #f6a840;
+  --bs-navbar-active-color: #f1d21f;
+  --bs-navbar-brand-color: #f6a840;
+  --bs-navbar-brand-hover-color: #f1d21f;
+}
+
 
 /* Customiza Bootstrap Buttons */
 
@@ -154,13 +196,39 @@ main .wrap{
 --bs-gradient: none;
 }
 
+.navbar-toggler{
+  border: none;
+  border-color: #fff;
+}
+ .navbar-toggler span{
+  color: #fff;
+ 
+ }
+
 /* General color pallet */
 
 .txt-searq-secundary{
   color: #f6a840;
 }
 
+.bg-primary-purple{
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--purple),var(--bs-bg-opacity)) !important;
+  color: #fff;
+}
+
+.bg-secondary-purple{
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--purple-ii),var(--bs-bg-opacity)) !important;
+  color: #fff;
+}
+
 .searq-text-muted {
   --bs-text-opacity: 1;
   color: #9f73b9 !important;
+}
+
+.text-ligth-grey {
+  --bs-text-opacity: 1;
+  color: #d3dbe2 !important;
 }
