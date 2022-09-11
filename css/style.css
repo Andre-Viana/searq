@@ -115,6 +115,87 @@ main .wrap{
   height: 500 px;
 }
 
+/* ABOUT */
+
+.hex-purple{
+  background-color: #411d49;
+}
+
+.hex-purple:before{
+  border-bottom: 30px solid #411d49;
+}
+
+.hex-purple:after{
+  border-top: 30px solid #411d49;
+}
+
+
+
+.hex-yellow{
+  background-color: #F7A941;
+}
+
+.hex-yellow:before{
+  border-bottom: 30px solid #F7A941;
+}
+
+.hex-yellow:after{
+  border-top: 30px solid #F7A941;
+}
+
+.hex-yellow2{
+  background-color: #BF8041;
+}
+
+.hex-yellow2:before{
+  border-bottom: 30px solid #BF8041;
+}
+
+.hex-yellow2:after{
+  border-top: 30px solid #BF8041;
+}
+
+.hex-grey{
+  background-color: #7E787F;
+}
+
+.hex-grey:before{
+  border-bottom: 30px solid #7E787F;
+}
+
+.hex-grey:after{
+  border-top: 30px solid #7E787F;
+}
+
+.hex:before {
+  content: " ";
+  width: 0; height: 0;
+  border-left: 52px solid transparent;
+  border-right: 52px solid transparent;
+  position: absolute;
+  top: -30px;
+}
+
+.hex {
+  margin-top: 30px;
+  width: 104px;
+  height: 60px;
+  position: relative;
+}
+
+.hex:after {
+  content: "";
+  width: 0;
+  position: absolute;
+  bottom: -30px;
+  border-left: 52px solid transparent;
+  border-right: 52px solid transparent;
+}
+
+.hex-col {
+  margin-bottom: 60px;
+}
+
 /* CUSTOMIZE CARDS
 -------------------------------------------------- */
 
